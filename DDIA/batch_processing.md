@@ -80,15 +80,12 @@ SO it should wait for previous job.
     * e.g. cannot use random value
 
 
-## Graph and Iterative Processing
-Many graph algorithm process an edge exatyle one time
-MapReduce is not suitable for such algorithms (`while` loop).
+### Graph and Iterative Processing
+Many graph algorithms process an edge one time.
+MapReduce is not suitable for such looped algorithm.
 
-Pregel processing model
-* apply a function which accepts an edge and send a message to other edges
-* at every time an iteration stops, record the output in device
-    * falut tolerant
-* Graph node allocation is responsible for the algorithm
-    * Ideally minimal network communication
-* Network delay is a big matter
+An alternative is Pregel Processing Model.
+It applies a function which accepts an edge and sends a message to other edges.
+Every time an iteration stops, it records the output in device to guarantee falte tolerant.
+Network delay is a major problem.
 
