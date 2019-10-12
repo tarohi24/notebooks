@@ -1,3 +1,7 @@
+---
+title: "Batch Processing
+---
+
 ## About
 
 Authors categorized systems in the following manner.

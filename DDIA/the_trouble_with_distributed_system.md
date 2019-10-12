@@ -1,3 +1,7 @@
+---
+title: "the trouble with distributed system.md"
+---
+
 ## Problems in distributed system
 
 ### Network is not reliable
