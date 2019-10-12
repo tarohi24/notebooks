@@ -1,6 +1,4 @@
----
-title: "the trouble with distributed system.md"
----
+# the trouble with distributed system
 
 ## Problems in distributed system
 
