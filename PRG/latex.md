@@ -27,3 +27,9 @@ And refer like this:
 
 ### Minipage doesn't place two itesm horizontally
 This may be because more than two CRs are inserted between two items in the source code.
+
+### dvipdfmx:fatal: Cannot proceed without .vf or "physical" font for PDF output...
+Fonts are not embedded. When we use Hiragino and certain version of macOS, it occurs.
+
+### LaTeX Error: Cannot determine size of graphic in xxx (no BoundingBox)
+Do you set `divpdfmx` in `usepackage{graphicx}`?
