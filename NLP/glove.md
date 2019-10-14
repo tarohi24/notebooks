@@ -8,7 +8,7 @@ Word2vec takes only context words in the windows. On the other hand, a co-occure
 The objective function of GloVe is as the following:
 
 $$
-{J(\theta) = \frac{1}{2}\sum^{W}_{i,j=1}f(P_{ij})(u^{T}_{i}v_j - \log{P_{ij}})^2 }
+J(\theta) = \frac{1}{2}\sum^{W}_{i,j=1}f(P_{ij})(u^{T}_{i}v_j - \log{P_{ij}})^2
 $$
 
-Where $P$ is the co-occurence matrix and f is a weighting function (this is an arbitrary function).
+Where $P$ is the co-occurence matrix and $f$ is a weighting function (this is an arbitrary function).
