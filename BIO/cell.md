@@ -1,6 +1,15 @@
 Cell
 ===========
 
+
+## Cell growing
+Cells in their early states are called inner cell mass (ICM). They are formed inside blastocyst, which is a very early stage of a fertilized egg. Embryonic stem (ES) cells are derived from ICM.
+
+## Type of cells
+
+### Glia cells
+Glia cells are in charge of maintenance of brain and neuron. They are located in oligodendrocyte, which forms myelin sheath, and microglia, which acts as the first and main form of active immune defence in central nervous systems.
+
 ## Cell Culture
 Cell culture is the removal of cells from an organism. There are some steps of the culture.
 
@@ -12,4 +21,5 @@ Cell line (subclone) is the next stete of primary culture. The degree of genotyp
 
 
 ## Sources
+- https://en.wikipedia.org/wiki/Microglia
 - https://www.thermofisher.com/jp/ja/home/references/gibco-cell-culture-basics/introduction-to-cell-culture.html
