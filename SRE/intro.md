@@ -17,3 +17,5 @@ Launch reviews contain all tha problems that have ever been reported.
 - Traditional ops teams scale linearly as people increase
   - This means hiring more people to do the same things
 - In Google, over 50% of SRE team member's time should be for developing.
+
+> In general, an SRE team is responsible for the availability, latency, performance, efficiency, change management, monitoring, emergency response, and capacity planning
