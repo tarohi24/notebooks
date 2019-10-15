@@ -34,3 +34,12 @@ Noises usually follow normal distribution. Inserting Dropout layers also works.
 ### Sparse Autoencoder
 
 Making Autoencoder sparse (forcing less nodes to activate). The philosophy behind it that "ff you could speak only a few words per month, you would prorably try to make them worth listening to".
+
+
+### Variational Autoencoder
+
+Variational Autoencoder ([#58](https://github.com/tarohi24/literature/issues/58)) is a generative Autoencoder which encodes input into the parameters of a distribution instead of an embedding. The coding space is called latent space. Variational Autoencoder is generative becasue we can generate dummy outputs from noises.
+
+### Constructive Autoencoder
+
+Adding loss for derivatives $|| \frac{\partial f}{\partial x} || $ (force AE to train parameters gradually).
