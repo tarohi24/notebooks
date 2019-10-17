@@ -1,4 +1,4 @@
-Natural Language Processing aND Information Retrieval
+Natural Language Processing and Information Retrieval
 =============
 
 This is not for an book/literature, but from multiple sources.
