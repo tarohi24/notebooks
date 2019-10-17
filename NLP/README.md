@@ -1,20 +1,11 @@
 Natural Language Processing and Information Retrieval
-=============
+======
 
-This is not for an book/literature, but from multiple sources.
-
-## Embeddings
+- [Coping with large vocabulary size](./coping_with_large_vocab.md)
+- [ELMo](./elmo.md)
 - [GloVe](./glove.md)
 - [InferSent](./infersent.md)
-- [ELMo](./elmo.md)
+- [Neuralnet for IR](./ir_nn.md)
+- [Natural Language Inference](./nli.md)
+- [ROUGE](./rouge.md)
 - [Transformer](./transformer.md)
-
-### TIPS
-- [Coping with large vocabulary](./coping_with_large_vocab.md)
-
-
-## Evaluation
-- [Rouge](./rouge.md)
-
-## Tasks / Corpus
-- [NLI](./nli.md)

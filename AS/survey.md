@@ -1,4 +1,5 @@
-# How to survey a research area?
+How to survey a research area?
+==========
 
 ## Prof. Takayuki Ito (Ochanomizu Univ.)
 
