@@ -50,10 +50,14 @@ class Directory(Node):
     def get_title(self) -> str:
         return File(self.path.joinpath('README.md'), root=self.root).get_title()
 
+    def _get_children_strs(self, indent) -> List[str]:
+        return [child.to_str(indent=indent) for child in self.children]
+
     def to_str(self, indent: int = 0) -> str:
-        children_strs: List[str] = [child.to_str(indent=indent+2)
-                                    for child in self.children]
-        s: str = f'{"  "*indent}- [{self.get_title()}](./{self.rel_path()})'
+        children_strs: List[str] = self._get_children_strs(indent=indent+2)
+        s: str = ''
+        if self.path != self.root:
+            s += f'{"  "*indent}- [{self.get_title()}](./{self.rel_path()})'
         if len(children_strs) > 0:
             s += '\n'
             s += '\n'.join(children_strs)
@@ -67,6 +71,7 @@ class Directory(Node):
         else:
             print(self.to_str())
         for child in self.get_dir_children():
+            child.root = child.path
             child.write_to_readme(fake=fake)
 
 
