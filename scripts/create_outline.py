@@ -3,6 +3,7 @@ import argparse
 from dataclasses import dataclass
 import linecache
 from pathlib import Path
+import re
 from typing import List, Tuple
 
 
@@ -36,7 +37,7 @@ class Node:
 class File(Node):
 
     def get_title(self) -> str:
-        return linecache.getline(str(self.path.resolve()), 1)
+        return linecache.getline(str(self.path.resolve()), 1)[:-1]
 
     def to_str(self, indent: int = 0) -> str:
         return f'{"  "*indent}- [{self.get_title()}](./{self.rel_path()})'
@@ -48,8 +49,10 @@ class Directory(Node):
     def children(self) -> List[Node]:
         return [Directory(path, root=self.root) if path.is_dir()
                 else File(path, root=self.root)
-                for path in list(self.path.glob('*.md'))
-                if path.name != 'README.md']
+                for path in list(self.path.glob('*'))
+                if path.name != 'README.md'\
+                and not ((not path.is_dir()) and path.suffix != '.md')\
+                and not (path.is_dir() and not re.match('^[A-Z]+$', path.name))]
 
     def get_title(self) -> str:
         return File(self.path.joinpath('README.md'), root=self.root).get_title()
@@ -58,8 +61,9 @@ class Directory(Node):
         children_strs: List[str] = [child.to_str(indent=indent+2)
                                     for child in self.children]
         s: str = f'{"  "*indent}- [{self.get_title()}](./{self.rel_path()})'
-        s += '\n'
-        s += '\n'.join(children_strs)
+        if len(children_strs) > 0:
+            s += '\n'
+            s += '\n'.join(children_strs)
         return s
 
 
