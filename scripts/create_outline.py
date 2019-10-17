@@ -1,21 +1,9 @@
 from __future__ import annotations
-import argparse
 from dataclasses import dataclass
 import linecache
 from pathlib import Path
 import re
 from typing import List, Tuple
-
-
-parser = argparse.ArgumentParser(description='Auto outlines generator')
-parser.add_argument('directory',
-                    type=str,
-                    help='directory')
-parser.add_argument('-o',
-                     '--output',
-                     type=str,
-                     nargs='?',
-                     help='Path to output')
 
 
 @dataclass
@@ -47,12 +35,17 @@ class Directory(Node):
 
     @property
     def children(self) -> List[Node]:
-        return [Directory(path, root=self.root) if path.is_dir()
-                else File(path, root=self.root)
-                for path in list(self.path.glob('*'))
-                if path.name != 'README.md'\
-                and not ((not path.is_dir()) and path.suffix != '.md')\
-                and not (path.is_dir() and not re.match('^[A-Z]+$', path.name))]
+        return self.get_file_children + get_dir_children()
+
+    def get_file_children(self) -> List[File]:
+        return [File(path, root=self.root)
+                for path in sorted(list(self.path.glob('*')))
+                if (not path.is_dir()) and (path.suffix == '.md') and (path.name != 'README.md'))]
+
+    def get_dir_children(self) -> List[Directory]:
+        return [Directory(path, root=self.root)
+                for path in sorted(list(self.path.glob('*')))
+                if (path.is_dir()) and (re.match('^[A-Z]+$', path.name))]
 
     def get_title(self) -> str:
         return File(self.path.joinpath('README.md'), root=self.root).get_title()
@@ -66,16 +59,14 @@ class Directory(Node):
             s += '\n'.join(children_strs)
         return s
 
+    def write_to_readme(self) -> None:
+        with open(self.path.joinpath('README.md'), 'w') as fout:
+            fout.write(self.to_str())
+        for child in self.get_dir_children():
+            child.write_to_readme()
+
 
 if __name__ == '__main__':
-    args = parser.parse_args()
-    dirpath: Path = Path(args.directory)
-    assert dirpath.is_dir(), f'{dirpath} is not a directory'
+    dirpath: Path = Path(__file__).parent.parent
     directory: Directory = Directory(dirpath, root=dirpath)
-
-    outfile: str = args.output
-    if outfile is None:
-        print(directory.to_str())
-    else:
-        with open(outfile, 'w') as fout:
-            fout.write(directory.to_str())
+    directory.write_to_readme()
