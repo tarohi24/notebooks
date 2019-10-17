@@ -48,7 +48,7 @@ class Directory(Node):
     def children(self) -> List[Node]:
         return [Directory(path, root=self.root) if path.is_dir()
                 else File(path, root=self.root)
-                for path in self.path.iterdir()
+                for path in list(self.path.glob('*.md'))
                 if path.name != 'README.md']
 
     def get_title(self) -> str:
@@ -65,7 +65,7 @@ class Directory(Node):
 
 if __name__ == '__main__':
     args = parser.parse_args()
-    dirpath: Path = Path(args.directory[0])
+    dirpath: Path = Path(args.directory)
     assert dirpath.is_dir(), f'{dirpath} is not a directory'
     directory: Directory = Directory(dirpath, root=dirpath)
 
