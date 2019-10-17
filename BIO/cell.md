@@ -3,7 +3,7 @@ Cell
 
 
 ## Cell growing
-Cells in their early states are called inner cell mass (ICM). They are formed inside blastocyst, which is a very early stage of a fertilized egg. Embryonic stem (ES) cells are derived from ICM.
+Cells in their early states are called inner cell mass (ICM). They are formed inside blastocyst, which is a very early stage of a fertilized egg. Embryonic stem (ES) cells are derived from ICM. ICM forms epiblast which is an origin of germ layer.
 
 ## Type of cells
 
