@@ -1,4 +1,5 @@
-# Transaction
+Transaction
+==========
 
 ## What’s transaction?
 Put multiple read/write into a logical unit.
@@ -30,5 +31,6 @@ if a database crash while executing a transaction, the transaction will be abort
     * response time will be huge
     * MVCC
 
-## snapshot isolation
+## Snapshot isolation
 - non repeatable reads don't happen!
+- Snapshot Isolation cannot prevent from **write skew**, which is to update a row without knowing another transaction updates it.
