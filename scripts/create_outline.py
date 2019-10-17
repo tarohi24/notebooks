@@ -35,7 +35,7 @@ class Directory(Node):
 
     @property
     def children(self) -> List[Node]:
-        return self.get_file_children + get_dir_children()
+        return self.get_file_children() + self.get_dir_children()
 
     def get_file_children(self) -> List[File]:
         return [File(path, root=self.root)
@@ -70,6 +70,6 @@ class Directory(Node):
 
 
 if __name__ == '__main__':
-    dirpath: Path = Path(__file__).parent.parent
+    dirpath: Path = Path(__file__).resolve().parent.parent
     directory: Directory = Directory(dirpath, root=dirpath)
     directory.write_to_readme(fake=True)
