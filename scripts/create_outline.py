@@ -9,13 +9,11 @@ from typing import List, Tuple
 parser = argparse.ArgumentParser(description='Auto outlines generator')
 parser.add_argument('directory',
                     type=str,
-                    required=True,
                     help='directory')
-paraser.add_argument('-o',
+parser.add_argument('-o',
                      '--output',
                      type=str,
-                     default='stdout',
-                     required=False,  # None -> print to stdout
+                     nargs='?',
                      help='Path to output')
 
 
@@ -38,7 +36,7 @@ class Node:
 class File(Node):
 
     def get_title(self) -> str:
-        return linecache.getline(str(self.path.reslolve()), 1)
+        return linecache.getline(str(self.path.resolve()), 1)
 
     def to_str(self, indent: int = 0) -> str:
         return f'{"  "*indent}- [{self.get_title()}](./{self.rel_path()})'
@@ -54,7 +52,7 @@ class Directory(Node):
                 if path.name != 'README.md']
 
     def get_title(self) -> str:
-        return File(self.path.joinpath('README.md')).get_title()
+        return File(self.path.joinpath('README.md'), root=self.root).get_title()
 
     def to_str(self, indent: int = 0) -> str:
         children_strs: List[str] = [child.to_str(indent=indent+2)
@@ -71,8 +69,8 @@ if __name__ == '__main__':
     assert dirpath.is_dir(), f'{dirpath} is not a directory'
     directory: Directory = Directory(dirpath, root=dirpath)
 
-    outfile: str = args.output[0]
-    if outfile == 'stdout':
+    outfile: str = args.output
+    if outfile is None:
         print(directory.to_str())
     else:
         with open(outfile, 'w') as fout:
