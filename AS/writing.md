@@ -1,4 +1,5 @@
-# Academic Writing Skills
+Writing
+===============
 
 Here's mainly for scientific papers.
 Everyone must have their own opinion.

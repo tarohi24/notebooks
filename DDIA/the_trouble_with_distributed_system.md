@@ -1,4 +1,5 @@
-# the trouble with distributed system
+Troubles with distributed system
+==============
 
 ## Problems in distributed system
 

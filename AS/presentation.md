@@ -1,4 +1,5 @@
-# Presentation TIPS
+Presentation
+===========
 
 ## Contents
 ### Self introduction
