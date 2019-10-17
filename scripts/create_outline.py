@@ -40,7 +40,7 @@ class Directory(Node):
     def get_file_children(self) -> List[File]:
         return [File(path, root=self.root)
                 for path in sorted(list(self.path.glob('*')))
-                if (not path.is_dir()) and (path.suffix == '.md') and (path.name != 'README.md'))]
+                if (not path.is_dir()) and (path.suffix == '.md') and (path.name != 'README.md')]
 
     def get_dir_children(self) -> List[Directory]:
         return [Directory(path, root=self.root)
@@ -59,14 +59,17 @@ class Directory(Node):
             s += '\n'.join(children_strs)
         return s
 
-    def write_to_readme(self) -> None:
-        with open(self.path.joinpath('README.md'), 'w') as fout:
-            fout.write(self.to_str())
+    def write_to_readme(self, fake: bool = False) -> None:
+        if not fake:
+            with open(self.path.joinpath('README.md'), 'w') as fout:
+                fout.write(self.to_str())
+        else:
+            print(self.to_str())
         for child in self.get_dir_children():
-            child.write_to_readme()
+            child.write_to_readme(fake=fake)
 
 
 if __name__ == '__main__':
     dirpath: Path = Path(__file__).parent.parent
     directory: Directory = Directory(dirpath, root=dirpath)
-    directory.write_to_readme()
+    directory.write_to_readme(fake=True)
