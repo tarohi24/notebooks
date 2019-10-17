@@ -1,9 +1,9 @@
 Academic Skills
-===========
+======
 
-- [TIPS for Desing Reviews](./design_review.md)
-- [Japanese for writing papers](./japanese.md)
+- [Viewpoints for Design Reviewing](./design_review.md)
+- [Japanese TIPS](./japanese.md)
 - [Presentation](./presentation.md)
-- [How to Do Research](./research.md)
-- [How to conduct a research survey](./survey.md)
-- [TIPS for writing](./writing.md)
+- [Research TIPS](./research.md)
+- [How to survey a research area?](./survey.md)
+- [Writing](./writing.md)
