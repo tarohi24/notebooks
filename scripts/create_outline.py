@@ -54,10 +54,12 @@ class Directory(Node):
         return [child.to_str(indent=indent) for child in self.children]
 
     def to_str(self, indent: int = 0) -> str:
-        children_strs: List[str] = self._get_children_strs(indent=indent+2)
         s: str = ''
         if self.path != self.root:
             s += f'{"  "*indent}- [{self.get_title()}](./{self.rel_path()})'
+            children_strs: List[str] = self._get_children_strs(indent=indent+2)
+        else:
+            children_strs: List[str] = self._get_children_strs(indent=indent)
         if len(children_strs) > 0:
             s += '\n'
             s += '\n'.join(children_strs)
