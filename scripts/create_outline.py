@@ -68,7 +68,7 @@ class Directory(Node):
     def write_to_readme(self, fake: bool = False) -> None:
         if not fake:
             with open(self.path.joinpath('README.md'), 'w') as fout:
-                fout.write(f'{self.get_title()}\n======\n\n')
+                fout.write(f'{self.get_title()}\n======\n')
                 fout.write(self.to_str())
         else:
             print(self.to_str())
