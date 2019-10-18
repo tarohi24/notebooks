@@ -18,13 +18,15 @@ jobs:
     - name: Check diff
       id: diff
       run: git diff --name-only | wc -l
+    - name: Check existing pull-requests
+      id: branch
+      run: git rev-parse --verify --quiet branch_name | wc -l
     - name: Create Pull Request
+      if: ${{ steps.diff.output > 0 $$ steps.branch.output == 0 }}
       uses: peter-evans/create-pull-request@v1.5.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         COMMIT_MESSAGE: ':sparkles:generate outlines'
-        COMMIT_AUTHOR_EMAIL: nobuyoshi2426@gmail.com
-        COMMIT_AUTHOR_NAME: Wataru Hirota
         PULL_REQUEST_TITLE: '[action] generate outlines'
         PULL_REQUEST_BODY: This is an auto-generated PR with auto-generation of outlines in README.
         PULL_REQUEST_LABELS: automated
