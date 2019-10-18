@@ -20,7 +20,7 @@ jobs:
       run: git diff --name-only | wc -l
     - name: Check existing pull-requests
       id: branch
-      run: git rev-parse --verify --quiet branch_name | wc -l
+      run: git branch | grep "atuo/outline*" | wc -l
     - name: Create Pull Request
       if: steps.diff.output > 0 && steps.branch.output == 0
       uses: peter-evans/create-pull-request@v1.5.2
