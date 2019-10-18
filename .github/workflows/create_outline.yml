@@ -22,7 +22,7 @@ jobs:
       id: branch
       run: git rev-parse --verify --quiet branch_name | wc -l
     - name: Create Pull Request
-      if: ${{ steps.diff.output > 0 $$ steps.branch.output == 0 }}
+      if: ${{ steps.diff.output > 0 && steps.branch.output == 0 }}
       uses: peter-evans/create-pull-request@v1.5.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
