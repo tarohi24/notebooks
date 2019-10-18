@@ -22,7 +22,7 @@ jobs:
       uses: peter-evans/create-pull-request@v1.5.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        COMMIT_MESSAGE: ':sparkles: generate outlines'
+        COMMIT_MESSAGE: ':sparkles:generate outlines'
         COMMIT_AUTHOR_EMAIL: nobuyoshi2426@gmail.com
         COMMIT_AUTHOR_NAME: Wataru Hirota
         PULL_REQUEST_TITLE: '[action] generate outlines'
