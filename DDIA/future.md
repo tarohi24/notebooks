@@ -55,4 +55,4 @@ The lambda architecture has gained lots of attention. The idea is that if batch 
 
 In the architecture batch and steram are running in parallel. The stream processor consumes the events and quickly produces and approximate updat to the view. Batch processor will consumes the *same* set. The underlying idea is that batch processing is less prone to fail.
 
-However, having the same logic both in streaming and batch requires a huge amount of effort. e.g. Summingbird offers an abstraction for them.
+However, having the same logic both in streaming and batch requires a huge amount of effort. e.g. Summingbird offers an abstraction for them. And now the problem is gradually descreasing because both processors are implemented in the same system.
