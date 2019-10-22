@@ -158,4 +158,81 @@ All of the discussion of correctness we had has been under the assumption that c
 
 
 ## Designing for auditability
-If a transaction matures
+- Event-based systems : better auditability
+  - because an event is immutable
+- being explicit provenance (origin) of the data makes integrity checking much more feasible.
+  - From any derived state we can re-run the batch processing.[:w
+- also a deterministic and well-defined dataflow also makes it easier to debug
+
+
+## The end-to-end arugment again
+- If we cannot trust all the components, at least we have to check the integrity of our data integrity so that we can stop the damage to downstream in early step.
+- End-to-End fashion is the best to check the integrity.
+  - more components included
+- Having continuous end-to-end integrity checks gives you inceased confidnece about the correctness of our system
+
+
+## Tools for auditable data systems
+Interesting: cryptographic tools to prove the integrity
+  - bitcoin
+such service is essentially distributed systems, adn check each transan
+and each component is untrusting arganization
+replicas cnotinually check each otehr's integrity and use a consensus protocol to agree on the transactinos that should be executed.
+- now the throughput of bitcoin (mining) is so slow 
+- most cryptographic auditing and integrity often relies on Merkle trees
+  - which are trees of hashes
+
+
+## Doing the right thing
+- "Every system is built for a purpose"
+- but the consequences for the world may reach far beyond that original purpose
+- wem as the engineers building these systems, have a responsibility to carefully consider those consequences
+- Don't forget the users are also humans
+
+
+### Predictive Analysis
+- is a major part of "Big Data".
+- e.g. weather forecast, prediction of the spread of disease
+- naturally bank aboids bad loans, airlines want to aboid hijackings
+- the cost of missing chance is low
+  - but the cost of a bad effect is highera
+- if prediction is in doubt, they are better off saying no.
+
+
+### Bias and discrimination
+- every person is likely to have biases eve if they try to counteract them
+- discriminatory practices can become culturally institutionalized.
+- when we develop predictive systems, we are not merely automating a human decision by settings rule
+- but we are even leaving the rule dicision from data
+- sometimes patterns we may not why exist (opaque)
+- if the system tends to amplify some biases, ...
+- how about systems show the racial biases? even IP address can be a strong preictor of races
+- “machine learning is like money laundering for bias
+
+
+### Responsibility and accountability
+- As human, algorithms make mistakes too.
+- but who is accountable if they go wrong?
+  - self-driving car
+
+
+### Feedback loops
+- e.g. reccomaendatino systems, as the predictor is getting more smarter, they may end up showing people only opinions they already agree with
+
+
+### Privacy and Tracking
+- tracking user behaviour has become essential for user-facing features of many online servies
+- however, depending on a company's business model. tracking often doesn't stop there
+
+
+## summary
+In this chapter the author describes the future
+- the starting point si that no one single tool that can efficiently serve all possible use cases
+- and data-integration is a solution
+- by making these derivations and transformation loosely coupled (e.g. asynchronously), we can prevent from spreading to unrelated parts of the system
+  - it also helps the system evolve evolve and be fixed
+
+- As for correctness with rge presence of faulst, we saw strong integrity guarantees can be implemented scalably with asynchronous event processing
+- apologize
+
+- finally we saw ethical aspects of buildaing data-intensive applicatinos
