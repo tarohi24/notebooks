@@ -56,3 +56,49 @@ The lambda architecture has gained lots of attention. The idea is that if batch 
 In the architecture batch and steram are running in parallel. The stream processor consumes the events and quickly produces and approximate updat to the view. Batch processor will consumes the *same* set. The underlying idea is that batch processing is less prone to fail.
 
 However, having the same logic both in streaming and batch requires a huge amount of effort. e.g. Summingbird offers an abstraction for them. And now the problem is gradually descreasing because both processors are implemented in the same system.
+
+
+## Unboundaling databases
+At a most abstract level, databases, Hadoop and OSs performs the same function: they store, process and query the data. The main difference is whether it's based on file systems or not. They have different philosopy in terms of data management. The unbounded approach follows the Unix philosophy that small tools do one thing well. The opposite idea is federation.
+
+
+## Unbundled vs integrated systems
+The future of unboundling is different from their current form. Specialized query engines will continue to be important. However, each software has a learinng curve. We may not need to waste our time.
+
+The goal of unbundling is to combine several different databases in order to achieve good performance for much wider range of wrokloads.
+
+
+## Exactly-once execution of an operation
+*exactly-once* semantics is not to allow processing twice. exactly-once means arranging the ocmputaiton such that the final effect is the same as if no faults had occurred. If we make the operation idemopnent, we don't take care of how many times the operation is executed.
+
+
+## Duplicate suppression
+Suppressing duplicate transactinos is needed in certain patterns (especially if the operation is not idemponent).
+
+How to suppress duplicate? One implementation is using unique ID. In the case above, preparing for request ID prevents a request from being executed multiple times.
+
+```SQL
+
+BEGIN TRANSACTION;
+INSERT INTO requests
+  (request_id, from_account, to_account, amount)
+  VALUES('...', 4321, 1234, 11.00)
+UPDATE accounts SET balance = balance + 11.00 WHERE account_id = 1234;
+UPDATE accounts SET balance = balance - 11.00 WHERE account_id = 4321;
+COMMIT;
+```
+
+
+
+## Enforcing Constraints
+
+
+
+
+## Timeliness and Integrity
+
+
+
+
+## Correctness of dataflow systems
+kk
