@@ -15,6 +15,7 @@
     - [Batch Processing](./DDIA/batch_processing.md)
     - [Data Model and Query Model](./DDIA/data_model_and_query_model.md)
     - [Encoding](./DDIA/encoding.md)
+    - [The feature of Data Systems](./DDIA/future.md)
     - [Graph Database](./DDIA/graph_database.md)
     - [Leader](./DDIA/leader.md)
     - [Partitioninig](./DDIA/partitioning.md)
