@@ -17,12 +17,17 @@ jobs:
       run: python scripts/create_outline.py
     - name: Check diff
       id: diff
-      run: git diff --name-only | wc -l
+      run: |
+        DLEN=$(git diff --name-only | wc -l)
+        if [ $DLEN -eq $bar ]; then exit 1; fi
     - name: Check existing pull-requests
       id: branch
-      run: git branch | grep "atuo/outline*" | wc -l
+      if: success()
+      run: |
+        BLEN=$(git branch | grep "atuo/outline*" | wc -l)
+        exit $BLEN
     - name: Create Pull Request
-      if: steps.diff.output > 0 && steps.branch.output == 0
+      if: success()
       uses: peter-evans/create-pull-request@v1.5.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
