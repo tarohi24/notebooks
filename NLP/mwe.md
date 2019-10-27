@@ -25,6 +25,8 @@ Methods which have in part syntax or pragmatics. This category is further classi
 
 - fixed expressions: e.g. while we can say *in short*, we cannot say *in very short*.
 - semi-fixed expresssions: while word orders are invariable, minor variances such as determiner selection is possible. e.g. the rule of *kick the backet* also accepts *kicks the bucket*.
+- syntactically-flexible expresssions
+
 
 ### Intuitionalized phrases
-More compositional than lexical phrases.
+More compositional than lexical phrases. These methods capture MWEs which are statistically idiosyncratic, but syntactically compositional.
