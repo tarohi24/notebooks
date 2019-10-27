@@ -6,6 +6,7 @@ Natural Language Processing and Information Retrieval
 - [GloVe](./glove.md)
 - [InferSent](./infersent.md)
 - [Neuralnet for IR](./ir_nn.md)
+- [Multiword Expressions](./mwe.md)
 - [Natural Language Inference](./nli.md)
 - [ROUGE](./rouge.md)
 - [Transformer](./transformer.md)
