@@ -36,6 +36,7 @@
     - [GloVe](./NLP/glove.md)
     - [InferSent](./NLP/infersent.md)
     - [Neuralnet for IR](./NLP/ir_nn.md)
+    - [Multiword Expressions](./NLP/mwe.md)
     - [Natural Language Inference](./NLP/nli.md)
     - [ROUGE](./NLP/rouge.md)
     - [Transformer](./NLP/transformer.md)
