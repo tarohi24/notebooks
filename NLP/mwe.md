@@ -3,6 +3,7 @@ Multiword Expressions
 
 ## References
 - [ACL Wiki](https://aclweb.org/aclwiki/Multiword_Expressions)
+- [Tokenization - Stanford NLP](https://nlp.stanford.edu/IR-book/html/htmledition/tokenization-1.html)
 
 
 ## About the task
@@ -14,6 +15,11 @@ Examples:
 - San Fransisco (proper names)
 - kick the bucket (idioms)
 - telephone box (compounded nouns)
+
+In IR context, there's also a simialr problem:
+
+> Conceptually, splitting on white space can also split what should be regarded as a single token
+(Stanford NLP)
 
 
 ## Studies
