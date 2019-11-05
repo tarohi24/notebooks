@@ -58,3 +58,5 @@
     - [Introduction](./SRE/intro.md)
 - [Think Days Note](./TD)
     - [December, 2018](./TD/2018-12.md)
+- [Working TIPS](./WORK)
+    - [Software Engineering at Google](./WORK/Google.md)
