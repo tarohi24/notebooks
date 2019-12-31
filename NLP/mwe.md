@@ -36,3 +36,8 @@ Methods which have in part syntax or pragmatics. This category is further classi
 
 ### Intuitionalized phrases
 More compositional than lexical phrases. These methods capture MWEs which are statistically idiosyncratic, but syntactically compositional.
+
+
+## Useful tools
+
+- [MWE tokenizer implementation offered by nltk](https://www.nltk.org/_modules/nltk/tokenize/mwe.html)
