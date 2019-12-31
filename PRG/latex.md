@@ -33,3 +33,7 @@ Fonts are not embedded. When we use Hiragino and certain version of macOS, it oc
 
 ### LaTeX Error: Cannot determine size of graphic in xxx (no BoundingBox)
 Do you set `divpdfmx` in `usepackage{graphicx}`?
+
+### Troubles with minipages
+
+- Not aligned horizontally -> More that two CRs may be inserated.
