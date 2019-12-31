@@ -1,0 +1,17 @@
+Time series analysis
+=====
+
+Lecturer: Prof. Maekawa
+This lectures focus especially on data obtained by sensors.
+
+
+## Remove noise
+
+### Filters
+For instance: moving average
+
+### Domain driven
+For instance, human motion has low frequencies. Thus high-frequent data is probally noise.
+
+
+
