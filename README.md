@@ -27,6 +27,7 @@
     - [Phrases for papers](./ENG/phrases_for_papers.md)
     - [Preposition](./ENG/preposition.md)
 - [Lectures and Conferences](./LEC)
+    - [Lecture by Dr. Ozaki](./LEC/ozaki.md)
 - [Machine Learning and Deep Learning](./ML)
     - [Autoencoder](./ML/autoencoder.md)
     - [Pattern mining](./ML/pattern_mining.md)
