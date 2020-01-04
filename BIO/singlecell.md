@@ -7,6 +7,11 @@ Single Cell
 - Gene expression = transcription + translation.
 
 
+## Why singlecell?
+Same-typed cells are not acually same. For instance, cancer cells perform totally differently, which makes cancer treatment difficult. Thus more fine-grained cell analysis, single-cell analysis, is necessary.
+
+Related work: (Wang+ Nature. 2014.)
+
 ## How to gather single cells?
 
 ### Microarray
