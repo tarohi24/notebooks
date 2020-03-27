@@ -1,0 +1,10 @@
+bash
+=====
+
+## Load `.bash_profile` when bash launches
+
+You need to specify login mode.
+
+```sh
+$ bash -l
+```
