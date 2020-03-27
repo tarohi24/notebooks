@@ -1,6 +1,7 @@
 Programming TIPS
 ======
 
+- [bash](./bash.md)
 - [C](./c.md)
 - [Git](./git.md)
 - [Java](./java.md)
@@ -11,4 +12,5 @@ Programming TIPS
 - [Python](./PYT)
     - [Django](./PYT/django.md)
     - [Jupyter](./PYT/jupyter.md)
+    - [Packages](./PYT/packages.md)
     - [Python](./PYT/python.md)
